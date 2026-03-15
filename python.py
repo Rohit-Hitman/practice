@@ -1,18 +1,18 @@
-# # Group Words by Their Length
+ ##Flatten a Nested List
+data = [[1, 2, [3]], [4, 5], 6]
 
-from collections import defaultdict
 
-l=['apple1','apple2',"banana1", "kiwi", "apple3","kiwi"]
+def flat(data):
+    l=[]
+    for i in data:
+        if isinstance(i,list):
+            l.extend(flat(i))
+        else:
+            l.append(i)
+    #print(l)
+    return l
 
-r=defaultdict(list)
+res=flat(data)
+print(res)
 
-for i in l:
-    r[len(i)].append(i)
-print("Group Words by Their Length : ",r)
-
-# group by first char
-r1=defaultdict(list)
-for i in l:
-    r1[i[0]].append(i)
-print("group by first char : ", r1)
 
