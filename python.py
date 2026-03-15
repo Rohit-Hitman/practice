@@ -1,21 +1,13 @@
-##find top 3 product sale 
+# #we have two dictionary, id and values, combine values in one without duplicacy
 
-l=["p1","p2","p4","p4","p3","p3","p2","p4","p3","p5","p5","p5","p5","p5","p5","p5","p6","p4"]
+d1={"id":[1,2,3]}
+d2={"id":[3,10,5,4]}
 
-d={}
-for i in l:
-    if i in d.keys():
-        d[i]=d[i]+1
-    else:
-        d[i]=1
-# print(d)
-d1=sorted(d.items(), key=lambda x:x[1], reverse=True)
+d3=set(d1["id"]+d2["id"])
+print(d3)
+print(type(d3))
 
-d2=dict(d1[:3])
-print(d2)
-c=0
-for i,j in d2.items():
-    print(c,"",i,": ", j)
-    c=c+1
+d4=(d1["id"]+d2["id"])
+print(d4)
+print(type(d4))
 
- 
