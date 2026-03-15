@@ -1,13 +1,18 @@
-# #we have two dictionary, id and values, combine values in one without duplicacy
+# # Group Words by Their Length
 
-d1={"id":[1,2,3]}
-d2={"id":[3,10,5,4]}
+from collections import defaultdict
 
-d3=set(d1["id"]+d2["id"])
-print(d3)
-print(type(d3))
+l=['apple1','apple2',"banana1", "kiwi", "apple3","kiwi"]
 
-d4=(d1["id"]+d2["id"])
-print(d4)
-print(type(d4))
+r=defaultdict(list)
+
+for i in l:
+    r[len(i)].append(i)
+print("Group Words by Their Length : ",r)
+
+# group by first char
+r1=defaultdict(list)
+for i in l:
+    r1[i[0]].append(i)
+print("group by first char : ", r1)
 
